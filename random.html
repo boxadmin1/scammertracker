@@ -126,6 +126,9 @@
             </div>
           `;
           scammerInfoDiv.style.display = 'block';
+        })
+        .catch(err => {
+          console.error('Error fetching data:', err);
         });
     });
   </script>
