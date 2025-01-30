@@ -106,10 +106,10 @@
     const generateButton = document.getElementById('generateButton');
     const scammerInfoDiv = document.getElementById('scammerNumber');
 
-    fetch('database.json')
-      .then(response => response.json())
-      .then(data => {
-        generateButton.addEventListener('click', () => {
+    generateButton.addEventListener('click', () => {
+      fetch('database.json')
+        .then(response => response.json())
+        .then(data => {
           const randomIndex = Math.floor(Math.random() * data.length);
           const randomScammer = data[randomIndex];
 
@@ -127,7 +127,7 @@
           `;
           scammerInfoDiv.style.display = 'block';
         });
-      });
+    });
   </script>
 </body>
 </html>
