@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Scammer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Submit a Scammer Report</h1>
+    <p>Provide details about the scammer you would like to report:</p>
+    <form id="reportForm">
+      <input type="text" id="phone" placeholder="Phone Number" required>
+      <input type="text" id="email" placeholder="Email" required>
+      <input type="text" id="website" placeholder="Website" required>
+      <input type="text" id="scamType" placeholder="Scam Type" required>
+      <input type="text" id="location" placeholder="Location" required>
+      <textarea id="other" placeholder="Additional Information" required></textarea>
+      <input type="number" id="victimCount" placeholder="Victim Count" required>
+      <input type="text" id="lastReported" placeholder="Last Reported" required>
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+
+  <script>
+    const reportForm = document.getElementById('reportForm');
+
+    reportForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const reportData = {
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        website: document.getElementById('website').value.trim(),
+        scamType: document.getElementById('scamType').value.trim(),
+        location: document.getElementById('location').value.trim(),
+        other: document.getElementById('other').value.trim(),
+        victimCount: document.getElementById('victimCount').value.trim(),
+        lastReported: document.getElementById('lastReported').value.trim()
+      };
+
+      // For now, we'll just log the submitted data to the console
+      console.log('Report Submitted:', reportData);
+
+      // Clear the form after submission
+      reportForm.reset();
+
+      alert('Your report has been submitted successfully!');
+    });
+  </script>
+</body>
+</html>
