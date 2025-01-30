@@ -106,57 +106,28 @@
     const generateButton = document.getElementById('generateButton');
     const scammerInfoDiv = document.getElementById('scammerNumber');
 
-    const fakeScammerData = [
-      {
-        phone: '555-0101',
-        email: 'techsupport@scammer.com',
-        website: 'www.scammersupport.com',
-        scamType: 'Tech Support Scam',
-        location: 'New York, USA',
-        other: 'Uses fake company name to offer help for computer issues.',
-        victimCount: 150,
-        lastReported: 'January 2025'
-      },
-      {
-        phone: '555-0199',
-        email: 'lottery@scammer.com',
-        website: 'www.fake-lottery.com',
-        scamType: 'Lottery Scam',
-        location: 'London, UK',
-        other: 'Claims you won a lottery, asks for payment to release winnings.',
-        victimCount: 200,
-        lastReported: 'December 2024'
-      },
-      {
-        phone: '555-9876',
-        email: 'phishing@scammer.com',
-        website: 'www.fake-phishing.com',
-        scamType: 'Phishing Scam',
-        location: 'Sydney, Australia',
-        other: 'Sends fake emails pretending to be a bank or tech company.',
-        victimCount: 120,
-        lastReported: 'November 2024'
-      }
-    ];
+    fetch('database.json')
+      .then(response => response.json())
+      .then(data => {
+        generateButton.addEventListener('click', () => {
+          const randomIndex = Math.floor(Math.random() * data.length);
+          const randomScammer = data[randomIndex];
 
-    generateButton.addEventListener('click', () => {
-      const randomIndex = Math.floor(Math.random() * fakeScammerData.length);
-      const randomScammer = fakeScammerData[randomIndex];
-
-      scammerInfoDiv.innerHTML = `
-        <div class="scammer-card">
-          <span><strong>Phone:</strong> ${randomScammer.phone}</span>
-          <span><strong>Email:</strong> ${randomScammer.email}</span>
-          <span><strong>Website:</strong> ${randomScammer.website}</span>
-          <span><strong>Scam Type:</strong> ${randomScammer.scamType}</span>
-          <span><strong>Location:</strong> ${randomScammer.location}</span>
-          <span><strong>Victim Count:</strong> ${randomScammer.victimCount}</span>
-          <span><strong>Last Reported:</strong> ${randomScammer.lastReported}</span>
-          <span><strong>Other Info:</strong> ${randomScammer.other}</span>
-        </div>
-      `;
-      scammerInfoDiv.style.display = 'block';
-    });
+          scammerInfoDiv.innerHTML = `
+            <div class="scammer-card">
+              <span><strong>Phone:</strong> ${randomScammer.phone}</span>
+              <span><strong>Email:</strong> ${randomScammer.email}</span>
+              <span><strong>Website:</strong> ${randomScammer.website}</span>
+              <span><strong>Scam Type:</strong> ${randomScammer.scamType}</span>
+              <span><strong>Location:</strong> ${randomScammer.location}</span>
+              <span><strong>Victim Count:</strong> ${randomScammer.victimCount}</span>
+              <span><strong>Last Reported:</strong> ${randomScammer.lastReported}</span>
+              <span><strong>Other Info:</strong> ${randomScammer.other}</span>
+            </div>
+          `;
+          scammerInfoDiv.style.display = 'block';
+        });
+      });
   </script>
 </body>
 </html>
