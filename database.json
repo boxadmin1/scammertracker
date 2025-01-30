@@ -6,7 +6,7 @@
     "scamType": "PayPal Scam",
     "location": "Unknown",
     "other": "N/A",
-    "victimCount": unknown,
+    "victimCount": "unknown",
     "lastReported": "1/30/2025"
   },
   {
@@ -16,7 +16,7 @@
     "scamType": "Unknown",
     "location": "Unknown",
     "other": "N/A",
-    "victimCount": unknown,
+    "victimCount": "unknown",
     "lastReported": "1/30/2025"
   },
   {
@@ -26,7 +26,7 @@
     "scamType": "Unknown",
     "location": "Unknown",
     "other": "N/A",
-    "victimCount": unknown,
+    "victimCount": "unknown",
     "lastReported": "1/30/2025"
-  },
+  }
 ]
