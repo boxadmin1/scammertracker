@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find a Scammer</title>
   <style>
+    /* ... (Your existing styles) ... */
     * {
       margin: 0;
       padding: 0;
@@ -67,7 +68,7 @@
     }
 
     .scammer-info {
-      display: block;
+      display: none; /* Initially hidden */
       background-color: #3c3c3c;
       border-radius: 10px;
       padding: 20px;
@@ -99,37 +100,64 @@
     <p>Click the button below to get a random scammer number and additional info!</p>
     <button id="generateButton">Get a Scammer Number</button>
 
-    <div id="scammerNumber" class="scammer-info" style="display: none;"></div>
+    <div id="scammerInfo" class="scammer-info"></div>
   </div>
 
   <script>
+    const scammerData = [
+      {
+        "phone": "(888) 927-9579",
+        "email": "complaint@gname.com",
+        "website": "juhelp.top",
+        "scamType": "PayPal Scam",
+        "location": "Unknown",
+        "other": "N/A",
+        "victimCount": "unknown", // Make sure victimCount is a string
+        "lastReported": "1/30/2025"
+      },
+      {
+        "phone": "(844) 713-1524",
+        "email": "Unknown",
+        "website": "Unknown",
+        "scamType": "Unknown",
+        "location": "Unknown",
+        "other": "N/A",
+        "victimCount": "unknown",
+        "lastReported": "1/30/2025"
+      },
+      {
+        "phone": "(808) 767-5377",
+        "email": "Unknown",
+        "website": "Unknown",
+        "scamType": "Unknown",
+        "location": "Unknown",
+        "other": "N/A",
+        "victimCount": "unknown",
+        "lastReported": "1/30/2025"
+      },
+      // ... more scammer objects if you have them
+    ];
+
     const generateButton = document.getElementById('generateButton');
-    const scammerInfoDiv = document.getElementById('scammerNumber');
+    const scammerInfoDiv = document.getElementById('scammerInfo');
 
     generateButton.addEventListener('click', () => {
-      fetch('database.json') // Fetch data from the JSON file
-        .then(response => response.json())
-        .then(data => {
-          const randomIndex = Math.floor(Math.random() * data.length);
-          const randomScammer = data[randomIndex];
+      const randomIndex = Math.floor(Math.random() * scammerData.length);
+      const randomScammer = scammerData[randomIndex];
 
-          scammerInfoDiv.innerHTML = `
-            <div class="scammer-card">
-              <span><strong>Phone:</strong> ${randomScammer.phone}</span>
-              <span><strong>Email:</strong> ${randomScammer.email}</span>
-              <span><strong>Website:</strong> ${randomScammer.website}</span>
-              <span><strong>Scam Type:</strong> ${randomScammer.scamType}</span>
-              <span><strong>Location:</strong> ${randomScammer.location}</span>
-              <span><strong>Victim Count:</strong> ${randomScammer.victimCount}</span>
-              <span><strong>Last Reported:</strong> ${randomScammer.lastReported}</span>
-              <span><strong>Other Info:</strong> ${randomScammer.other}</span>
-            </div>
-          `;
-          scammerInfoDiv.style.display = 'block';
-        })
-        .catch(err => {
-          console.error('Error fetching data:', err);
-        });
+      scammerInfoDiv.innerHTML = `
+        <div class="scammer-card">
+          <span><strong>Phone:</strong> ${randomScammer.phone}</span>
+          <span><strong>Email:</strong> ${randomScammer.email}</span>
+          <span><strong>Website:</strong> ${randomScammer.website}</span>
+          <span><strong>Scam Type:</strong> ${randomScammer.scamType}</span>
+          <span><strong>Location:</strong> ${randomScammer.location}</span>
+          <span><strong>Victim Count:</strong> ${randomScammer.victimCount}</span>
+          <span><strong>Last Reported:</strong> ${randomScammer.lastReported}</span>
+          <span><strong>Other Info:</strong> ${randomScammer.other}</span>
+        </div>
+      `;
+      scammerInfoDiv.style.display = 'block';
     });
   </script>
 </body>
