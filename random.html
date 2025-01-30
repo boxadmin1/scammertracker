@@ -107,7 +107,7 @@
     const scammerInfoDiv = document.getElementById('scammerNumber');
 
     generateButton.addEventListener('click', () => {
-      fetch('database.json')
+      fetch('database.json') // Fetch data from the JSON file
         .then(response => response.json())
         .then(data => {
           const randomIndex = Math.floor(Math.random() * data.length);
