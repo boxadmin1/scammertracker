@@ -10,43 +10,23 @@
     "lastReported": "1/30/2025"
   },
   {
-    "phone": "(844) 713-1524 ",
-    "email": "lottery@scammer.com",
-    "website": "www.fake-lottery.com",
-    "scamType": "Lottery Scam",
-    "location": "London, UK",
-    "other": "Claims you won a lottery, asks for payment to release winnings.",
-    "victimCount": 200,
-    "lastReported": "December 2024"
+    "phone": "(844) 713-1524",
+    "email": "Unknown",
+    "website": "Unknown",
+    "scamType": "Unknown",
+    "location": "Unknown",
+    "other": "N/A",
+    "victimCount": Unknown,
+    "lastReported": "1/30/2025"
   },
   {
-    "phone": "555-9876",
-    "email": "phishing@scammer.com",
-    "website": "www.fake-phishing.com",
-    "scamType": "Phishing Scam",
-    "location": "Sydney, Australia",
-    "other": "Sends fake emails pretending to be a bank or tech company.",
-    "victimCount": 120,
-    "lastReported": "November 2024"
+    "phone": "(808) 767-5377",
+    "email": "Unknown",
+    "website": "Unknown",
+    "scamType": "Unknown",
+    "location": "Unknown",
+    "other": "N/A",
+    "victimCount": Unknown,
+    "lastReported": "1/30/2025"
   },
-  {
-    "phone": "555-1234",
-    "email": "investment@scammer.com",
-    "website": "www.fake-investments.com",
-    "scamType": "Investment Scam",
-    "location": "Los Angeles, USA",
-    "other": "Promises high returns on fake investments.",
-    "victimCount": 90,
-    "lastReported": "October 2024"
-  },
-  {
-    "phone": "555-4321",
-    "email": "romance@scammer.com",
-    "website": "www.fake-romance.com",
-    "scamType": "Romance Scam",
-    "location": "Toronto, Canada",
-    "other": "Uses fake profiles to trick people into sending money.",
-    "victimCount": 80,
-    "lastReported": "September 2024"
-  }
 ]
